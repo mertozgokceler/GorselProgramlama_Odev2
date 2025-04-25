@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgOdev2.Kredi"
+             Title="Kredi Hesaplama">
+
+    <StackLayout Padding="20">
+
+        
+        <Label Text="Kredi Türünü Seçin:" FontSize="Medium" TextColor="Turquoise" />
+
+        <Button x:Name="KrediTürüSeçButonu"
+            Text="Kredi Türünü Seçiniz"
+            BackgroundColor="Orange"
+            TextColor="White"
+            FontAttributes="Bold"    
+            HeightRequest="50"
+            Clicked="KrediTürüSeçButonu_Clicked"/>
+
+        
+        <Label Text="Kredi Tutarı (TL)" />
+        <Entry x:Name="LoanAmountEntry" Keyboard="Numeric" BackgroundColor="AliceBlue" TextColor="Navy" />
+
+        
+        <Label Text="Aylık Faiz Oranı (%)" />
+        <Entry x:Name="InterestRateEntry" Keyboard="Numeric" BackgroundColor="AliceBlue" TextColor="Navy" />
+
+        
+        <Label Text="Vade (Ay)" />
+
+       
+        <Slider x:Name="LoanTermSlider" 
+            Minimum="1" Maximum="72" 
+            Value="12" 
+            ThumbColor="Orange"
+            ValueChanged="LoanTermSlider_ValueChanged" />
+
+       
+        <Label x:Name="TermLabel" 
+           Text="3 Ay" 
+           FontSize="Medium" 
+           HorizontalOptions="Center" 
+           TextColor="Orange" />
+
+        
+        <Button Text="Hesapla" Clicked="OnCalculateClicked" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold" Margin="0,10"/>
+
+        
+        <Label Text="Aylık Taksit:" FontAttributes="Bold" />
+        <Label x:Name="MonthlyPaymentLabel" Text="0 TL" TextColor="Orange" />
+
+        <Label Text="Toplam Ödeme:" FontAttributes="Bold"/>
+        <Label x:Name="TotalPaymentLabel" Text="0 TL" TextColor="Orange" />
+
+        <Label Text="Toplam Faiz:" FontAttributes="Bold" />
+        <Label x:Name="TotalInterestLabel" Text="0 TL" TextColor="Orange" />
+
+    </StackLayout>
+
+</ContentPage>

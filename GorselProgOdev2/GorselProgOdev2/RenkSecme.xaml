@@ -1,0 +1,50 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgOdev2.RenkSecme"
+             Title="Renk Seçme">
+
+    <ScrollView>
+        <Grid Padding="20" RowSpacing="15" ColumnSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            
+            <Frame Grid.Row="0" BorderColor="#8A8A8A" BackgroundColor="White" Padding="15" CornerRadius="15" HasShadow="True">
+                <StackLayout Spacing="15" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Renk Seçin" FontSize="36" HorizontalOptions="Center" TextColor="#333" FontAttributes="Bold" />
+
+                    <Label Text="Kırmızı" FontSize="Small" HorizontalOptions="Center" />
+                    <Slider x:Name="RedSlider" Minimum="0" Maximum="255" ValueChanged="OnColorChanged" WidthRequest="300"
+                            ThumbColor="Red" MaximumTrackColor="Red" MinimumTrackColor="#FFCCCC" />
+
+                    <Label Text="Yeşil" FontSize="Small" HorizontalOptions="Center" />
+                    <Slider x:Name="GreenSlider" Minimum="0" Maximum="255" ValueChanged="OnColorChanged" WidthRequest="300"
+                            ThumbColor="Green" MaximumTrackColor="Green" MinimumTrackColor="#B6F1B3" />
+
+                    <Label Text="Mavi" FontSize="Small" HorizontalOptions="Center" />
+                    <Slider x:Name="BlueSlider" Minimum="0" Maximum="255" ValueChanged="OnColorChanged" WidthRequest="300"
+                            ThumbColor="Blue" MaximumTrackColor="Blue" MinimumTrackColor="#AED8FF" />
+
+                   
+                    <Button Text="Random Renk Seç" Clicked="OnRandomColorClicked" BackgroundColor="DarkRed"
+                            TextColor="White" CornerRadius="20" Padding="10" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+           
+            <Frame Grid.Row="1" BorderColor="#8A8A8A" BackgroundColor="White" Padding="15" CornerRadius="15" HasShadow="True">
+                <StackLayout Spacing="15" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <BoxView x:Name="ColorPreview" HeightRequest="200" WidthRequest="200" BackgroundColor="DarkGray"
+                             HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="15" />
+
+                    <Label x:Name="ColorCodeLabel" Text="#000000" FontSize="18" HorizontalOptions="Center" TextColor="#333" />
+
+                    <Button Text="Renk Kodunu Kopyala" Clicked="OnCopyColorCodeClicked" BackgroundColor="Navy"
+                            TextColor="White" CornerRadius="20" Padding="10" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

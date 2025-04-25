@@ -1,0 +1,50 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgOdev2.BMI"
+             Title="Vücut Kitle Endeksi Hesaplama">
+
+    <StackLayout Padding="30" Spacing="25" VerticalOptions="CenterAndExpand">
+
+        
+        <Grid ColumnSpacing="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" Spacing="5" VerticalOptions="Center">
+                <Label Text="Kilo (kg)" FontAttributes="Bold"/>
+                <Entry x:Name="KiloGirdisi" WidthRequest="100" Keyboard="Numeric" Text="0" TextChanged="OnEntryChanged"/>
+            </StackLayout>
+
+            <Slider x:Name="KiloSlider" Grid.Column="1" Minimum="0" Maximum="400" ValueChanged="OnSliderChanged" VerticalOptions="Center"/>
+        </Grid>
+
+        
+        <Grid ColumnSpacing="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" Spacing="5" VerticalOptions="Center">
+                <Label Text="Boy (cm)" FontAttributes="Bold"/>
+                <Entry x:Name="BoyGirdisi" WidthRequest="100" Keyboard="Numeric" Text="0" TextChanged="OnEntryChanged"/>
+            </StackLayout>
+
+            <Slider x:Name="BoySlider" Grid.Column="1" Minimum="0" Maximum="250" ValueChanged="OnSliderChanged" VerticalOptions="Center"/>
+        </Grid>
+
+        
+
+        
+        <Button Text="Hesapla" Clicked="VkiHesapla" BackgroundColor="Orange" TextColor="White"
+                FontAttributes="Bold" CornerRadius="10" HorizontalOptions="Center" />
+
+        
+        <Label Text="Vücut Kitle İndeksi (VKİ):" FontSize="Medium" HorizontalOptions="Center" />
+        <Label x:Name="VkiLabel" Text="0" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Label x:Name="KategoriLabel" Text="Kategoriniz: " FontSize="Medium" HorizontalOptions="Center" TextColor="red" />
+
+    </StackLayout>
+</ContentPage>

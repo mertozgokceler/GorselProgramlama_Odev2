@@ -1,0 +1,1 @@
+C:\Users\merto\source\repos\GorselProgOdev2\GorselProgOdev2\GorselProgOdev2.csproj;x64
